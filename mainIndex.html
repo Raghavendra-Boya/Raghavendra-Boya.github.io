@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List Page</title>
+    <link rel="stylesheet" href="/assets/css/StudentList.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .header a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            display: flex;
+            height: calc(100vh - 50px); /* Adjust for header height */
+        }
+
+        .StudentNames {
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-right: 1px solid #ccc;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .StudentNames ol {
+            list-style: none;
+            padding: 0;
+        }
+
+        .StudentNames li {
+            margin-bottom: 10px;
+        }
+
+        .StudentNames a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .StudentNames a:hover {
+            text-decoration: underline;
+        }
+
+        .student-profile {
+            width: 80%;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h3>Student List</h3>
+        <div>
+            <a href="/index.html">PORTFOLIO</a>
+            <a href="#">||(GH)</a>
+        </div>
+    </header>
+    <section>
+        <!-- Sidebar for student names -->
+        <div class="StudentNames">
+            <ol>
+                <li><a href="#" onclick="openProfile('https://nairx.github.io/portfolio-griet/')">Student Name1</a>
+                    || <a href="https://github.com/student1" target="_blank">(GH)</a></li>
+                <li><a href="#" onclick="openProfile('/student2.html')">Student Name2 || (GH)</a></li>
+                <li><a href="#" onclick="openProfile('/student3.html')">Student Name3 || (GH)</a></li>
+                <li><a href="#" onclick="openProfile('/student4.html')">Student Name4 || (GH)</a></li>
+                <li><a href="#" onclick="openProfile('/student5.html')">Student Name5 || (GH)</a></li>
+                <li><a href="#" onclick="openProfile('/student6.html')">Student Name6 || (GH)</a></li>
+                <li><a href="#" onclick="openProfile('/student7.html')">Student Name7 || (GH)</a></li>
+            </ol>
+        </div>
+        
+        <!-- Main content area to display the iframe -->
+        <div class="student-profile">
+            <iframe id="profileIframe" src=""></iframe>
+        </div>
+    </section>
+
+    <script>
+        // Function to load the selected student's profile in the iframe
+        function openProfile(url) {
+            const profileIframe = document.getElementById('profileIframe');
+            profileIframe.src = url;
+        }
+    </script>
+</body>
+</html>
