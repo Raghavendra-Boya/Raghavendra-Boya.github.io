@@ -1,27 +1,87 @@
-*{
-    margin: 0%;
-    padding: 0%;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
-.header{
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
     display: flex;
-    background-color: aqua;
     justify-content: space-between;
+    align-items: center;
 }
-.StudentNames{
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    width: 8%;
-}
-.StudentNames a{
+
+.header a {
+    color: white;
     text-decoration: none;
+    margin-left: 15px;
 }
-.student-profile {
-    width: 85%;
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 50px);
+}
+
+.student-names {
+    width: 15%;
+    background-color: #f9f9f9;
     padding: 20px;
-    background-color: #fff;
+    border-right: 1px solid #ccc;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
 }
-.student-profile h2 {
-    margin-top: 0;
+
+.student-names ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.student-names li {
+    margin-bottom: 15px;
+}
+
+.student-names a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.student-names a:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.student-profile {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+    }
+
+    .student-names {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .student-profile {
+        height: calc(100vh - 150px);
+    }
 }
