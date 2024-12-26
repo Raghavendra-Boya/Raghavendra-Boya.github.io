@@ -1,60 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student List</title>
-    <link rel="stylesheet" href="./assets/css/StudentList.css">
-</head>
-<body>
-    <header class="header">
-        <h1>Student List</h1>
-        <nav>
-            <a href="Portfolio-Temp.html" target="_blank">Portfolio</a>
-            <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-        </nav>
-    </header>
-    <section>
-        <!-- Sidebar for student names -->
-        <aside class="student-names">
-            <ol>
-                <li>
-                    <a href="#" onclick="openProfile('https://nairx.github.io/portfolio-griet/')">Student Name 1</a>
-                    || <a href="https://github.com/student1" target="_blank" rel="noopener">(GH)</a>
-                </li>
-                <li>
-                    <a href="#" onclick="openProfile('./student2.html')">Student Name 2</a>
-                    || <a href="https://github.com/student2" target="_blank" rel="noopener">(GH)</a>
-                </li>
-                <li>
-                    <a href="#" onclick="openProfile('./student3.html')">Student Name 3</a>
-                    || <a href="https://github.com/student3" target="_blank" rel="noopener">(GH)</a>
-                </li>
-                <li>
-                    <a href="#" onclick="openProfile('./student4.html')">Student Name 4</a>
-                    || <a href="https://github.com/student4" target="_blank" rel="noopener">(GH)</a>
-                </li>
-                <li>
-                    <a href="#" onclick="openProfile('./student5.html')">Student Name 5</a>
-                    || <a href="https://github.com/student5" target="_blank" rel="noopener">(GH)</a>
-                </li>
-            </ol>
-        </aside>
-
-        <!-- Main content area -->
-        <main class="student-profile">
-            <iframe id="profileIframe" src="" title="Student Profile">
-                Your browser does not support iframes. Please use a modern browser.
-            </iframe>
-        </main>
-    </section>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Batch A</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h2><a href="index.html">My Students</a></h2>
+      <ul>
+        <li>
+          <a href="https://nairx.github.io/portfolio-griet" target="frm">PORTFOLIO</a> (<a
+            href="https://github.com/nairx/portfolio-griet" target="_blank"
+            >GH</a
+          >)
+        </li>
+        </ul>
+    </div>
+    <div class="container">
+      <div
+        id="divStudents"
+        style="overflow: scroll; height: 650px; width:200px; padding: 5px"
+      >Menu</div>
+      <div>
+        <iframe name="frm" src="home.html"> </iframe>
+      </div>
+    </div>
     <script>
-        // Function to load the selected student's profile in the iframe
-        function openProfile(url) {
-            const profileIframe = document.getElementById('profileIframe');
-            profileIframe.src = url;
-        }
+      let str = "<ol>";
+      students.map((value) => {
+        str =
+          str +
+          `<li><a href='https://${value.user}.github.io/' target="frm">${value.name}</a> | <a href='https://github.com/${value.user}' target='_blank'>GH</a></li>`;
+      });
+      divStudents.innerHTML = str + "</ol>";
     </script>
-</body>
+    <div class="footer">@copyright 2024. All rights reserved.</div>
+  </body>
 </html>
