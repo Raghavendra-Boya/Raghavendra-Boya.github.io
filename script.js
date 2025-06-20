@@ -8,7 +8,7 @@ let students = [
     { name: "Meghana", user: "meghanaaripirala" },
     { name: "Kireety", user: "kireety123" },
     { name: "Prashanth", user: "prasanth1reddy" },
-    { name: "Sayali", user: "sbagaitkar" },
+    { name: "Varshini", user: "varshini-1904" },
     { name: "Srujana", user: "srujanaaytha1" },
     { name: "Sai Kiran", user: "kiranmothe" },
   ];
